@@ -2,6 +2,7 @@ package assignmentTwo;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.Scanner;
 
 
 
@@ -24,7 +25,27 @@ public class BookList {
 			 Book b=(Book)obj;
 			 System.out.println(b);
 		 }
+		 char choice = 'a';
+		 System.out.println("How you want to sort?\nBy id, type a\nBy Name, type b\nBy Author, type c\nBy Publisher, type d\nBy number of copies, type e");
+		 Scanner sc = new Scanner(System.in);
+		 choice = sc.next().charAt(0);
+		 
+		 switch(choice) {
+		 case 'a':
+			 SortById n=new SortById();
+				books.sort(n);
+				System.out.println(books);
+		 break;
+		 case 'b':
+			 SortByName n1= new SortByName();
+			 books.sort(n1);
+			 System.out.println(books);
+		 break;
+		 
+		 }
 	
 	}
 
 }
+
+
