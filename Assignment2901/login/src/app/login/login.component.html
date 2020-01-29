@@ -1,0 +1,21 @@
+<form [formGroup]="loginform" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td>Username</td>
+      <td>
+        <input type="text" name="username" placeholder="Enter Username" formControlName="email">
+        <span *ngIf="loginform.controls.email.errors?.required">Username is required.</span>
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input type="password" name="password" placeholder="******" formControlName="password">
+        <span *ngIf="loginform.controls.password.errors?.required">Password is required.</span>
+      </td>
+    </tr>
+  </table>
+  <button type="submit">
+    Login
+  </button>
+</form>

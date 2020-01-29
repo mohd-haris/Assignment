@@ -1,0 +1,32 @@
+<div>
+  <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
+  <input type="text" placeholder="Enter your ID" formControlName="id" required>
+  <span *ngIf="addForm.controls.id.errors?.required">ID is required</span>
+  <br>
+  <input type="text" placeholder="Enter your username" [pattern]="uname" formControlName="username" required>
+  <span *ngIf="addForm.controls.username.errors?.required">Username is required</span>
+
+
+  <br>
+  <input type="text" placeholder="Enter your Name" [pattern]="name" formControlName="name" required minlength="4">
+  <span *ngIf="addForm.controls.name.errors.minlength">Enter name of valid length</span>
+  <span *ngIf="addForm.controls.name.errors?.pattern">   Characters not allowed</span>
+  <span *ngIf="addForm.controls.name.errors?.required">Name is required</span>
+  <br>
+  <input type="text" placeholder="Enter Email ID" [pattern]="email" formControlName="email" required>
+  <span *ngIf="addForm.controls.email.errors?.required">Email is required</span>
+  <span *ngIf="addForm.controls.email.errors?.pattern">  Enter valid email</span>
+  <br>
+  <input type="password" placeholder="Enter your Password" [pattern]="password" formControlName="password" required>
+  <span *ngIf="addForm.controls.password.errors?.required">Password is required</span>
+  <span *ngIf="addForm.controls.password.errors?.pattern">   Enter valid password</span>
+  <br>
+  <input type="number" placeholder="Enter your Mobile Number" [pattern]="mobile" formControlName="mobile" required>
+  <span *ngIf="addForm.controls.mobile.errors?.required">Mobile is required</span>
+  <span *ngIf="addForm.controls.mobile.errors?.pattern">  Enter valid number</span>
+  <br>
+
+  <button type="submit">LOGIN </button>
+  </form>
+ </div>
